@@ -10,8 +10,8 @@ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
-nvm install v0.10.12
-nvm use v0.10.12
+nvm install v0.10.21
+nvm use v0.10.21
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
@@ -46,3 +46,15 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
+#mongo
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+#Create a /etc/apt/sources.list.d/mongodb.list file using the following command.
+
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+#Now issue the following command to reload your repository:
+
+sudo apt-get update
+#Install Packages
+#Issue the following command to install the latest stable version of MongoDB:
+
+sudo apt-get install mongodb-10gen
